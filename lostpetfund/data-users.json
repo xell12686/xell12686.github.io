@@ -1,0 +1,70 @@
+[
+    {
+        "id": 1,
+        "userName": "tonystark",
+        "email": "ironman1252@gizmodo.com",
+        "donations": [
+            { "petID": 3, "donatedAmount": 9 },
+            { "petID": 7, "donatedAmount": 5 }
+        ]
+    },
+    {
+        "id": 2,
+        "userName": "rokieran1",
+        "email": "egoodfellow1@discovery.com",
+        "donations": null
+    },
+    {
+        "id": 3,
+        "userName": "sdullingham2",
+        "email": "lhallagan2@wunderground.com",
+        "donations": null
+    },
+    {
+        "id": 4,
+        "userName": "nslatcher3",
+        "email": "dkemetz3@icq.com",
+        "donations": null
+    },
+    {
+        "id": 5,
+        "userName": "awiffen4",
+        "email": "cduplain4@state.tx.us",
+        "donations": [
+            { "petID": 1, "donatedAmount": 10 },
+            { "petID": 7, "donatedAmount": 5 },
+            { "petID": 10, "donatedAmount": 3 },
+            { "petID": 3, "donatedAmount": 7 }
+        ]
+    },
+    {
+        "id": 6,
+        "userName": "dgalbraith5",
+        "email": "eodonohoe5@hibu.com",
+        "donations": null
+    },
+    {
+        "id": 7,
+        "userName": "cfusedale6",
+        "email": "adrewitt6@salon.com",
+        "donations": null
+    },
+    {
+        "id": 8,
+        "userName": "pfumagallo7",
+        "email": "domeara7@aol.com",
+        "donations": null
+    },
+    {
+        "id": 9,
+        "userName": "schristian8",
+        "email": "mguile8@list-manage.com",
+        "donations": null
+    },
+    {
+        "id": 10,
+        "userName": "ayurkiewicz9",
+        "email": "ymazella9@a8.net",
+        "donations": null
+    }
+]
