@@ -26,7 +26,8 @@ const DisplayUserName = ({user, onSignOut}) => (
 export default class Header extends Component {
     static defaultProps = {
         lostPets: [],
-        handleUpdateUser: () => {}
+        handleUpdateUser: () => {},
+        updatedUserDonations: []
     }
 
     state = {
@@ -66,26 +67,13 @@ export default class Header extends Component {
         return getDonatedPetData( petId, donatedAmount, label, this.props.lostPets );
     })
 
-    shouldComponentUpdate(nextProps, nextState) {
-        const { lostPets } = this.props;
-        const { user, loading } = this.state;
-        if (lostPets !== nextProps.lostPets || 
-            user !== nextState.user ||
-            loading !== nextState.loading )
-        return true; 
-        return false;
-    }
-
-    componentDidMount() {
-
-    }
-    
-
-
     render() {
         console.log('RENDER: Header');
         const { user, loading } = this.state;
-        const detailedDonations = this.getDonationDetails();
+        let detailedDonations = this.getDonationDetails();
+        if (this.props.updatedUserDonations.length > detailedDonations.length ) {
+            detailedDonations = this.props.updatedUserDonations;
+        }
 
         return (
             <header className="Header" >

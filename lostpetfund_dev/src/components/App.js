@@ -17,15 +17,17 @@ export default class App extends Component {
   updateUser = (username, donations) => {
     this.setState({ 
       user: username, 
-      userDonations: donations 
+      userDonations: donations
     });
-    const cleanedCards = this.state.cards.map(item => {
+    if(username === '') {
+      const cleanedCards = this.state.cards.map(item => {
         delete item.donatedStatus;
         return item;
-    });
-    this.setState({ 
-      cards1: cleanedCards
-    });
+      });
+      this.setState({ 
+        cards: cleanedCards
+      });
+    }
   }
     
   //move updatePetDonationStatus() here instead;
@@ -38,7 +40,7 @@ export default class App extends Component {
     this.setState({ 
       userDonations: donations,
       cards: pets
-    })    
+    })
   }
   
   updateCards = (pets) => {
@@ -57,7 +59,8 @@ export default class App extends Component {
 
     return (
       <div className="App">
-        <Header 
+        <Header
+          updatedUserDonations={userDonations}
           lostPets={cards}
           handleUpdateUser={this.updateUser}
         />

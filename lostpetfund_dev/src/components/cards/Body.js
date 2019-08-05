@@ -43,7 +43,7 @@ export default class Body extends Component {
         }) 
     }
     
-    makeDonation = (petId, amount) => {
+    makeDonation = (petId, amount, label) => {
         const { user } = this.props;
        
         let tempPets = this.state.lostPets;
@@ -52,11 +52,16 @@ export default class Body extends Component {
         });
         tempPets[petIndex].donatedStatus = true;
         this.props.handleUpdateCards(tempPets);
-        console.log('updated pets from new donation...');
 
-        let tempDonations = this.state.userDonations;
-        this.props.handleUpdateDonations(tempDonations);
         console.log('user ' + user + 'donated $' + amount + ' to petID:' + petId);
+
+        const newDonation = {
+            petId: petId,
+            donatedAmount: amount,
+            label: label
+        };
+        let updatedDonations = [...this.props.userDonations, newDonation];
+        this.props.handleUpdateDonations(updatedDonations);
     }
     
 
@@ -140,7 +145,7 @@ export default class Body extends Component {
                 .includes(this.state.queryText.toLowerCase()) 
             );
 
-        const { orderBy, queryText, loading, regions, currentPage, cardsPerPage } = this.state;
+        const { loading, regions, currentPage, cardsPerPage } = this.state;
         
         const indexOfLastCard = currentPage * cardsPerPage;
         const indexOfFirstCard = indexOfLastCard - cardsPerPage;
@@ -150,8 +155,6 @@ export default class Body extends Component {
         return (
             <main className="App-body">
                 <FilterCards
-                    orderBy={orderBy}
-                    queryText={queryText}
                     handleChangeOrder={this.changeOrder}
                     handleChangeRegion={this.changeRegion}
                     regions={regions} 
@@ -159,6 +162,7 @@ export default class Body extends Component {
                 {loading ? 
                     <LoadingAnimation message="Loading Pets" /> : 
                     <Cards
+                        user={this.props.user}
                         lostPets={currentCards}
                         handleMakeDonation={this.makeDonation}
                     />

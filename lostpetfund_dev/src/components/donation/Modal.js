@@ -6,9 +6,9 @@ import './Modal.scss';
 
 export default class Modal extends Component {
   static defaultProps = {
-    content: '',
+    user: '',
     petId: '',
-    handleReceiveDonation: () => {}
+    handleReceiveDonation: (amount, label) => {}
   }
 
   state = {
@@ -35,11 +35,17 @@ export default class Modal extends Component {
     return (
       <div className="Modal" >
         <section className={'modal-main ' + animationClass}>
-          Form to donate to pet #: {this.props.petId}
-          <DonationForm 
-            handleSendDonation={this.props.handleReceiveDonation}
-            handleCancelDonation={this.closeModal}  
-          />
+          {this.props.user ?
+            <DonationForm 
+              handleSendDonation={this.props.handleReceiveDonation}
+              handleCancelDonation={this.closeModal}  
+            /> :
+            <div className="note">
+              <h3>Please sign in to make donation...</h3>
+              <button onClick={this.closeModal}>Close</button>              
+            </div>
+          }
+
         </section>
       </div>
     );    

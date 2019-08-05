@@ -18,8 +18,9 @@ import img700 from '../../images/700.jpg';
 
 export default class Cards extends Component {
     static defaultProps = {
+        user: '',
         lostPets: [],
-        handleMakeDonation: (petId, amount) => {}
+        handleMakeDonation: (petId, amount, label) => {}
     };
 
     state = {
@@ -35,8 +36,8 @@ export default class Cards extends Component {
     }
     hideModal = () => this.setState({ showModal: false });
       
-    receiveDonation = (amount) => {
-        this.props.handleMakeDonation(this.state.petToDonate, amount);
+    receiveDonation = (amount, label) => {
+        this.props.handleMakeDonation(this.state.petToDonate, amount, label);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -55,7 +56,7 @@ export default class Cards extends Component {
         
         console.log('RENDER: Cards');
         const {showModal, petToDonate} = this.state;
-        const { lostPets } = this.props;
+        const { lostPets, user } = this.props;
         const listCards = lostPets.map(item => {
             const { formattedDateLost, ownerName, ownerPhone, petId, petName, photo, region, type, donatedStatus } = item;
             const tel = ownerPhone.replace(/[^\d]/g,'');
@@ -120,6 +121,7 @@ export default class Cards extends Component {
             <div className="Cards">
                 {showModal && 
                     <Modal 
+                        user={user}
                         showModal={showModal} 
                         petId={petToDonate}
                         handleClose={this.hideModal}

@@ -39,14 +39,14 @@ Whenever one of the following interactions occurs, a warning should appear that 
 <!-- - display animals - the displayed cards must match the filter values (page number and region) and sort fields (disappearance date, animal name) reflected in the listing section. By default, missing cards must be sorted in descending order of disappearance date, and display the first 6 results. -->
 
 ## App state
-Each animal is defined by the following fields:
+<!-- Each animal is defined by the following fields: -->
 
 <!-- - id, a string or unique number for each animal -->
 <!-- - type, which can be 'cat', 'dog' or 'other' -->
-- dataPerdido, an object composed of three properties:
+<!-- - dataPerdido, an object composed of three properties:
    - year: (eg 2019),
    - month: (can go from 1 to 12),
-   - day: (can go from 1 to 31)
+   - day: (can go from 1 to 31) -->
 <!-- - owner, text with name of the person in charge of the animal -->
 <!-- - owner number, text for owner's phone number -->
 <!-- - locality, text with the name of the city -->
