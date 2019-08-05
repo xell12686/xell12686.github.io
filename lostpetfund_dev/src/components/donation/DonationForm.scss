@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.DonationForm {
+  border:1px solid red;
+  input {
+    display: block;
+    padding:5x;
+    margin:5px;
+  }
+ 
+}

@@ -1,0 +1,113 @@
+
+@import 'variables';
+@import 'mixins';
+
+.Header {
+    background-color:$white;
+    .LoadingCircle {
+        .box {background-color:$white;}
+    }
+} 
+
+.top-bar {
+    background-color: $green;
+    color: $white;
+    padding:10px 0;
+    position: fixed;
+    width:100%;
+    top:0;
+    max-height: 64px;
+    overflow: hidden;
+    z-index:2;
+    a {text-decoration: none;}
+    .branding {
+        width:60%;
+        .app-logo { 
+            max-width:45px; 
+            margin:0 10px;
+            display: block;
+            float:left;
+            filter: grayscale(50%) invert(100%);
+            -webkit-filter: grayscale(50%) invert(100%);
+        }
+        .app-title {
+            letter-spacing: .1em;
+            line-height: 40px;
+            font-size: 30px;
+            margin:0;
+            text-decoration: none;
+            color:$white;
+        }
+        @include max-sm {
+            width:30%;
+            .app-title { 
+                display:none;
+            }        
+        }
+    }
+    .user-info {
+        width:40%;
+        font-family: $headingFont;
+        text-transform: uppercase;
+        text-align: right;
+        .user-icon {
+            display:block;
+            float:right;
+            margin:3px 10px;
+            width:30px;
+            filter: grayscale(50%) invert(100%);
+            -webkit-filter: grayscale(50%) invert(100%);
+        }
+        span {
+            line-height: 40px;
+        }
+        button {
+            float:right;
+            margin:4px 0 4px 10px;
+            border-radius: 3px;
+            background-color: $lime;
+            color:$white;
+            font-family: $headingFont;
+            border:none;
+            outline:none;
+            padding:5px 15px;
+            box-shadow:1px 1px 2px #878787;        
+        }        
+        @include max-sm {
+            width:70%;
+            span { display:none;}
+        }
+    }
+    
+}
+
+.UserInfo {
+    color: $white;
+    padding:15px 0;
+    text-align: center;
+    background-color:$white;
+    .box {
+        background-color: $lightBlue;
+        padding:20px; 
+        border-radius: 5px;
+        max-width: calc(100% - 30px);
+        margin:0 auto;
+        h3 {text-transform: uppercase;}
+        input {
+            display: inline-block;
+            margin:5px;
+            padding:5px 10px;
+        }
+        input[type="submit"] {
+            border-radius: 3px;
+            background-color: $lime;
+            color:$white;
+            font-family: $headingFont;
+            border:none;
+            outline:none;
+            padding:5px 20px;
+            box-shadow:1px 1px 2px #878787;
+            display: inline-block;
+        }
+    }
+}

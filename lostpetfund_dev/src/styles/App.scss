@@ -1,0 +1,108 @@
+@import 'variables';
+@import 'mixins';
+
+* {
+	box-sizing: border-box;
+	&:before, &:after {
+		box-sizing: border-box;
+	}
+}
+
+:focus { outline: none; }
+
+body {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	font-family: $bodyFont;
+	font-size: 16px;
+	color:$black;
+	background:$lightBlue;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5 {
+	margin: 0 0 .5em 0;
+	padding: 0;	
+	font-family: $headingFont; 
+	font-weight: bold;
+	letter-spacing: .05em;
+}
+
+p {margin-top:0;}
+ol, ul { list-style: none; margin:0; padding:0; }
+img { max-width: 100%; height: auto; }
+button, label { font-size: 14px; background-color:transparent;}
+button {
+	padding:5px;
+	display: inline-block;
+	border:1px solid $lightBlue;
+}
+input.text,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+.input-checkbox {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+.App {
+	padding-top: 60px;
+	position: relative;
+}
+.wrapper {
+	width: 100%;
+	max-width: 1024px;
+	padding: 0 15px;
+	margin:0 auto;
+	display: flow-root;
+}
+.row {
+	display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col {
+	-ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+	max-width: 100%;
+	position: relative;
+    width: 100%;
+    padding-right: 15px;
+	padding-left: 15px;
+	&.col-100 {
+		flex-basis: auto;
+	}
+	@include max-md {
+		flex-grow: 1;
+		flex-basis: unset;
+	}	
+}
+
+.animate {
+    @include transition(all 1.0s ease);
+    &.hide {
+        opacity: 0;
+    }
+    &.show {
+        opacity: 1;
+    }
+}
+
+/* alignments */
+.text-right {
+	text-align: right;
+}
+.text-center {
+	text-align: center;
+}
+
+.App-body {
+	background: $white;
+}

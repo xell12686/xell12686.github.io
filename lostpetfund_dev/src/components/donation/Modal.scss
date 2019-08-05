@@ -1,0 +1,53 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.Modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .4);
+  .modal-main {
+    position: absolute;
+    background:$white;
+    width: 90%;
+    padding:20px;
+    height: auto;
+    max-width: 400px;
+    min-height: 400px;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%) scale3d(.3, .3, .3);
+    transform: translate(-50%,-50%) scale3d(.3, .3, .3);
+    opacity:0;
+    @include transition(all .2s ease);    
+    .content {
+        text-align: center;
+    }
+    &.in {
+      opacity:1;
+      -webkit-transform: translate(-50%,-50%) scale3d(1, 1, 1);
+      transform: translate(-50%,-50%) scale3d(1, 1, 1);
+    }
+    
+    &.out {
+      -webkit-transform: translate(-50%,-50%) scale3d(.3, .3, .3);
+      transform: translate(-50%,-50%) scale3d(.3, .3, .3);
+      opacity:0;
+    }
+  }
+  button {
+    float:right;
+    margin:4px 0 4px 10px;
+    border-radius: 3px;
+    background-color: $lime;
+    color:$white;
+    font-family: $headingFont;
+    border:none;
+    outline:none;
+    padding:5px 15px;
+    box-shadow:1px 1px 2px #878787;        
+  }
+}
+

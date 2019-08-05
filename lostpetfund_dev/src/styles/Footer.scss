@@ -1,0 +1,48 @@
+
+@import 'variables';
+@import 'mixins';
+
+
+.Footer {
+    background-color: $lightBlue;
+    color: $white;
+    padding:20px 0;
+    .branding { 
+        .app-logo { 
+            max-width:30px; 
+            margin:0 10px;
+            display: block;
+            float:left;
+            filter: grayscale(50%) invert(100%);
+            -webkit-filter: grayscale(50%) invert(100%);
+        }
+        .app-title {
+            letter-spacing: .1em;
+            line-height: 30px;
+            font-size: 20px;
+            margin:0 10px 0 0;
+            display:inline-block;
+            @include max-md {
+                display:none;
+            }
+        }
+        span {
+            line-height: 32px;
+        }
+    }
+    .social-links {
+        text-align: right;
+        line-height: 33px;
+        .link-item {
+            display:inline-block; 
+            margin:0 10px;
+            width:25px;
+            &:nth-child(odd) {width:24px;}
+        }
+        img {
+            display:block;
+            filter: grayscale(50%) invert(100%);
+            -webkit-filter: grayscale(50%) invert(100%);
+        }
+    }
+}

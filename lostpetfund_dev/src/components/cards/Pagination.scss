@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.Pagination {
+    padding:10px 0 30px 0;
+    text-align: center;
+    button {
+        display: inline-block;
+        background-color:$lightBlue;
+        color:$white;
+        box-shadow:none;
+        outline:none;
+        border:1px solid $lightGrey;
+        padding:10px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        margin:0;
+        box-shadow: 1px 1px 2px #e6e6e6;
+        @include transition(all .3s linear);
+        &:disabled {
+            //border:none;
+            cursor: default;
+            color:$lightGrey;
+            border-color:$lightGrey;
+            background: $white;
+        }
+        &:hover:not(:disabled) {
+            background-color:$grey;
+            color:white;
+            box-shadow: none;
+        }
+    }
+}

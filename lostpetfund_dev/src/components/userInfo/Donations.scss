@@ -1,0 +1,30 @@
+
+@import '../../styles/variables';
+
+.Donations {
+    .donations-list {
+        h3 {text-transform: uppercase;}
+        .donation-item {
+            display: inline-block;
+            text-align: center;
+            margin:5px;
+            padding:5px 10px;
+            border-radius: 5px;
+            border:1px solid $lightGrey;
+            .donation-name {
+                text-transform: capitalize;
+            }
+            .donation-amount {
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.Welcome {
+    font-size: 20px;
+    display: block;
+    margin:0 auto 5px;
+    strong {font-family: $headingFont; text-transform: capitalize;}
+}
