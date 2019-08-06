@@ -19,13 +19,6 @@ export default class Pagination extends Component {
         const pageNumbers = [];
         const totalPages = Math.ceil(totalCards / cardsPerPage);
 
-        // console.log('total pages: ' + totalPages);
-        // if ( currentPage > totalPages ) {
-        //     console.log('change page to: ' + 1);
-        //     this.changePage(1);
-        // } else {
-
-        // }
         for( let i = 1; i <= totalPages; i++) {
             pageNumbers.push(i);
         }

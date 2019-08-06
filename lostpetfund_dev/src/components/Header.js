@@ -59,7 +59,6 @@ export default class Header extends Component {
     signOut = () => {
         this.setState({ user: '', userDonations: [] });
         this.props.handleUpdateUser('', []);
-        console.log('user signed out');
     }
 
     getDonationDetails = () => this.state.userDonations.map(item => {
@@ -68,7 +67,6 @@ export default class Header extends Component {
     })
 
     render() {
-        console.log('RENDER: Header');
         const { user, loading } = this.state;
         let detailedDonations = this.getDonationDetails();
         if (this.props.updatedUserDonations.length > detailedDonations.length ) {

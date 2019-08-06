@@ -2,5 +2,28 @@
 @import '../../styles/mixins';
 
 .DonationForm {
-  border:1px solid red;
+  label {
+    display: block;
+    input, select {
+      display: block;
+      margin:5px auto;
+      padding:3px;
+      border-radius: 3px;
+      border:1px solid $lightBlue; 
+    }
+    input[type="number"] {
+      width:50px;
+    }
+    &.amount {
+      input {
+        display: inline-block;
+        margin-left:10px;
+      }
+    }
+  }
+  button {
+    &[type="submit"] {
+      background-color: $lightBlue;
+    }
+  }
 }

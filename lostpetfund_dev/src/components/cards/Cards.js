@@ -25,6 +25,7 @@ export default class Cards extends Component {
 
     state = {
         showModal: false,
+        animateCard: '',
         petToDonate: ''
     }
 
@@ -40,6 +41,11 @@ export default class Cards extends Component {
         this.props.handleMakeDonation(this.state.petToDonate, amount, label);
     }
 
+    animateCard = (petId) => {
+        this.setState({ animateCard: petId });
+    }
+
+
     shouldComponentUpdate(nextProps, nextState) {
         const { showModal, petToDonate } = this.state;
         const { lostPets } = this.props;
@@ -54,15 +60,20 @@ export default class Cards extends Component {
 
     render() {
         
-        console.log('RENDER: Cards');
-        const {showModal, petToDonate} = this.state;
+        const {showModal, petToDonate, animateCard } = this.state;
         const { lostPets, user } = this.props;
         const listCards = lostPets.map(item => {
             const { formattedDateLost, ownerName, ownerPhone, petId, petName, photo, region, type, donatedStatus } = item;
             const tel = ownerPhone.replace(/[^\d]/g,'');
             const date = formattedDateLost.toLocaleDateString();
+            let className;
+            if (animateCard === petId) {
+                className = 'card-item animate';
+            } else {
+                className = 'card-item';
+            }
             return (
-                <div className="card-item" key={petId}>
+                <div className={className} key={petId}>
                     <div className="wrap">
                         <header>
                             <h2 className="title">
@@ -126,6 +137,7 @@ export default class Cards extends Component {
                         petId={petToDonate}
                         handleClose={this.hideModal}
                         handleReceiveDonation={this.receiveDonation}
+                        handleAnimateCard={this.animateCard}
                     />
                 }
                 <div className="wrapper">

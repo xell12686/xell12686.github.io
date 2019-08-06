@@ -28,24 +28,17 @@ export default class Body extends Component {
     }
 
     updatePetDonationStatus = (pets) => {
-        console.log('MeTHOD updatePetdonationstatus() RAN');
         const donatedPetsIDs = this.props.userDonations.map(item => {
             return item.petId;
         });
-        console.log('donated IS: ' + donatedPetsIDs);
         pets.forEach((pet) => {
             if (donatedPetsIDs.includes(pet.petId)) {
-                // let petIndex = pets.findIndex((item) => {
-                //     return item.petId === pet.petId;
-                // });
                 pet.donatedStatus = true;
             }
         }) 
     }
     
     makeDonation = (petId, amount, label) => {
-        const { user } = this.props;
-       
         let tempPets = this.state.lostPets;
         let petIndex = tempPets.findIndex((item) => {
             return item.petId === petId;
@@ -53,10 +46,9 @@ export default class Body extends Component {
         tempPets[petIndex].donatedStatus = true;
         this.props.handleUpdateCards(tempPets);
 
-        console.log('user ' + user + 'donated $' + amount + ' to petID:' + petId);
-
         const newDonation = {
             petId: petId,
+            petName: tempPets[petIndex].petName,
             donatedAmount: amount,
             label: label
         };
@@ -112,13 +104,10 @@ export default class Body extends Component {
     paginate = (number) => this.setState({ currentPage: number });
 
     render() {
-        console.log('RENDER: Body');
                    
         if (this.props.userDonations.length && this.state.lostPets.length) {
-            console.log('Trigger by BODY: updatePetDonationStatus');
             this.updatePetDonationStatus(this.state.lostPets);    
         } else {
-            console.log('inside BODY: no User donations yet');
         }
 
         let order;

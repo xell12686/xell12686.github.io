@@ -30,13 +30,9 @@ export default class App extends Component {
     }
   }
     
-  //move updatePetDonationStatus() here instead;
-  
+ 
   updateDonations = (donations) => {
     let pets = this.state.cards;
-    console.log('updateDonations() ran from App');
-    // create fx here to add new donated:true object in filtered pet/card to match
-    // to match id from new donations
     this.setState({ 
       userDonations: donations,
       cards: pets
@@ -44,10 +40,6 @@ export default class App extends Component {
   }
   
   updateCards = (pets) => {
-    // assuming that this will run too if userDonations state is updated
-    // update cards state by
-        // - add donated=true to for pet ids with
-        // donations from userDonations state.
     this.setState({cards: pets});
   }
 

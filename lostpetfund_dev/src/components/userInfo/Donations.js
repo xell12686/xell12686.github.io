@@ -13,12 +13,24 @@ const Welcome = ({user, donations}) => {
 }
 
 const ListDonations = ({donations}) => donations.map(item => {
-    let {petId, petName, label, donatedAmount} = item;
-    petName = petName || 'an anynomous Pet';
+    const {petId, label, donatedAmount} = item;
+    let petName;
+    if (!item.petName) {
+        petName = 'anonymous';
+    } else {
+        petName = item.petName;
+    }
+    let showlabel;
+    switch (label) {
+        case "petId": showlabel = petId; break;
+        case "donatedAmount": showlabel = donatedAmount; break;
+        case "petName": showlabel = petName; break;
+        default: showlabel = petName;
+    }
     return (
         <div className="donation-item" key={petId}>
             <span className="donation-name">
-                TO: { label || petName } 
+                TO: { showlabel }
             </span>
             <span className="donation-amount"> ${donatedAmount}</span>
         </div>
