@@ -25,16 +25,6 @@
     }
 }
 
-.animate {
-    @include transition(all 1.0s ease);
-    &.hide {
-        opacity: 0;
-    }
-    &.show {
-        opacity: 1;
-    }
-}
-
 .cards-list {
 	columns: 250px;
     column-gap: 30px; 
@@ -141,7 +131,15 @@
         text-decoration: none;
         color: #ffffff;
         text-transform: uppercase;
-    }    
+    }
+    &.animate {
+        -webkit-animation-name: shake;
+        animation-name: shake;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+    }
 }
 
 @include max-sm {
@@ -150,4 +148,31 @@
 	}
 }
 
-
+@-webkit-keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+} 

@@ -9,7 +9,8 @@ export default class Modal extends Component {
     user: '',
     petId: '',
     handleReceiveDonation: (amount, label) => {},
-    handleAnimateCard: () => {}
+    handleAnimateCard: () => {},
+    handleClose: () => {}
   }
 
   state = {
@@ -24,7 +25,6 @@ export default class Modal extends Component {
 
   closeModal = (donated) => {
     this.setState({ animate: false });
-    donated && this.props.handleAnimateCard();
     setTimeout(() => {
       this.props.handleClose();
     }, 250);

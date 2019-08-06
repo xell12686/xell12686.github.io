@@ -35,14 +35,15 @@ export default class Cards extends Component {
             petToDonate: petId 
         });
     }
-    hideModal = () => this.setState({ showModal: false });
+
+    closeModal = () => this.setState({ showModal: false });
       
     receiveDonation = (amount, label) => {
         this.props.handleMakeDonation(this.state.petToDonate, amount, label);
     }
 
-    animateCard = (petId) => {
-        this.setState({ animateCard: petId });
+    animateCard = () => {
+        this.setState({ animateCard: this.state.petToDonate });
     }
 
 
@@ -135,7 +136,7 @@ export default class Cards extends Component {
                         user={user}
                         showModal={showModal} 
                         petId={petToDonate}
-                        handleClose={this.hideModal}
+                        handleClose={this.closeModal}
                         handleReceiveDonation={this.receiveDonation}
                         handleAnimateCard={this.animateCard}
                     />
