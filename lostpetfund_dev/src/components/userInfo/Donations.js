@@ -22,8 +22,8 @@ const ListDonations = ({donations}) => donations.map(item => {
     }
     let showlabel;
     switch (label) {
-        case "petId": showlabel = petId; break;
-        case "donatedAmount": showlabel = donatedAmount; break;
+        case "petId": showlabel = petName; break;
+        case "donatedAmount": showlabel = petName; break;
         case "petName": showlabel = petName; break;
         case null: showlabel = null; break;
         default: showlabel = label;

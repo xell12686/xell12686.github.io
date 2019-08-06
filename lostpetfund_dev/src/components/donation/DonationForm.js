@@ -14,13 +14,12 @@ export default class DonationForm extends Component {
 
     handleLabel = e => {
         e.target.value === 'other' ?
-            this.setState({customLabel: true, label: 'other'}) :
-            this.setState({label: e.target.value, customLabel: false});
+            this.setState({showCustomlabel: true, label: 'other'}) :
+            this.setState({label: e.target.value, customLabel: '', showCustomlabel:false});
     }
 
     handleCustomLabel = e => {
-        const label = e.target.value;
-        this.setState({label: label});
+        this.setState({customLabel: e.target.value});
     }
 
     handleAmount = e => {
@@ -29,12 +28,13 @@ export default class DonationForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        const { amount, label } = this.state;
-        this.props.handleSendDonation(amount, label);
+        const { amount, label, customLabel } = this.state;
+        const finalLabel = customLabel || label;
+        this.props.handleSendDonation(amount, finalLabel);
         this.setState({
             amount: '',
             label: '',
-            customLabel: false
+            showCustomlabel: false
         });
         this.setState({ loading:true });
         setTimeout(() => {
@@ -47,14 +47,15 @@ export default class DonationForm extends Component {
     state = {
         amount: '',
         label: 'petName',
-        customLabel: false,
+        customLabel: '',
+        showCustomlabel: false,
         loading: false
     }
 
     render() {
 
         const { handleCloseModal } = this.props;
-        const { loading, customLabel, label, amount } = this.state;
+        const { loading, customLabel, showCustomlabel, label, amount } = this.state;
 
         return (
             <div className="DonationForm">
@@ -83,10 +84,10 @@ export default class DonationForm extends Component {
                                 <option value="other">Other</option>
                             </select>
                         </label>
-                        {customLabel &&
+                        {showCustomlabel &&
                             <label>
                                 Custom Label:
-                                <input type="text" placeholder="Custom label..." onChange={this.handleCustomLabel}/>
+                                <input type="text" value={customLabel} placeholder="Custom label..." onChange={this.handleCustomLabel}/>
                             </label>
                         }
                         <button type="submit" onClick={this.sendDonation} >Send</button>
