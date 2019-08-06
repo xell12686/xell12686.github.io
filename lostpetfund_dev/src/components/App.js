@@ -15,15 +15,12 @@ export default class App extends Component {
   }
   
   updateUser = (username, donations) => {
-    console.log('username:' + username);
     if (username) {
-      console.log('username not blank:' + username);
       this.setState({ 
         user: username, 
         userDonations: donations
       });
     } else {
-      console.log('username blank:');
       let cleanedCards = this.state.cards.map(item => {
         delete item.donatedStatus;
         return item;

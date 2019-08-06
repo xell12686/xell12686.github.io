@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lostpetfund/precache-manifest.b6415bd922b1396aafae3956af887b0e.js"
+  "/lostpetfund/precache-manifest.87ffb182f35037ecf5747792fea4842c.js"
 );
 
 self.addEventListener('message', (event) => {
