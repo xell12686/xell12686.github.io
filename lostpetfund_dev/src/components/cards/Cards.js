@@ -44,6 +44,9 @@ export default class Cards extends Component {
 
     animateCard = () => {
         this.setState({ animateCard: this.state.petToDonate });
+        setTimeout(() => {
+            this.setState({ animateCard: '' });
+        }, 2000);
     }
 
 
