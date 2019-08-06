@@ -7,7 +7,7 @@ import iconTwitter from '../images/twitter.svg';
 import iconYoutube from '../images/youtube.svg';
 import iconIg from '../images/ig.svg';
 
-const Footer = (props) => {
+const Footer = () => {
     return (
         <footer className="Footer" >
             <div className="wrapper">
@@ -15,15 +15,13 @@ const Footer = (props) => {
                     <div className="col branding">
                         <img src={logoIcon} className="app-logo" alt="logo" />
                         <h2 className="app-title">LostPetFund</h2> 
-                        <span>&copy; 2019</span>
+                        <span>&copy; {(new Date().getFullYear())}</span>
                     </div>
                     <div className="col social-links">
                         <a href="facebook.com" className="link-item" target="blank" ><img src={iconFb} className="app-logo" alt="logo" /></a>
                         <a href="twitter.com" className="link-item" target="blank" ><img src={iconTwitter} className="app-logo" alt="logo" /></a>
                         <a href="instagram.com" className="link-item" target="blank" ><img src={iconIg} className="app-logo" alt="logo" /></a>
                         <a href="youtube.com" className="link-item" target="blank" ><img src={iconYoutube} className="app-logo" alt="logo" /></a>
-                        {/* <img src={} className="user-icon" alt="logo" />
-                        <span className="user-name">tonystark</span> */}
                     </div>
                 </div>
             </div>

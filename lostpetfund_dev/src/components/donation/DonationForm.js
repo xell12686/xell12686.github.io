@@ -14,7 +14,7 @@ export default class DonationForm extends Component {
 
     handleLabel = e => {
         e.target.value === 'other' ?
-            this.setState({customLabel: true, label: ''}) :
+            this.setState({customLabel: true, label: 'other'}) :
             this.setState({label: e.target.value, customLabel: false});
     }
 
