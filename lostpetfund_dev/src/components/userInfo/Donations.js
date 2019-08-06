@@ -25,12 +25,13 @@ const ListDonations = ({donations}) => donations.map(item => {
         case "petId": showlabel = petId; break;
         case "donatedAmount": showlabel = donatedAmount; break;
         case "petName": showlabel = petName; break;
-        default: showlabel = petName;
+        case null: showlabel = null; break;
+        default: showlabel = label;
     }
     return (
         <div className="donation-item" key={petId}>
             <span className="donation-name">
-                TO: { showlabel }
+                TO: { showlabel || petName }
             </span>
             <span className="donation-amount"> ${donatedAmount}</span>
         </div>
