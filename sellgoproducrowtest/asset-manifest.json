@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/sellgoproducrowtest/static/css/main.bf8397f8.chunk.css",
+    "main.css": "/sellgoproducrowtest/static/css/main.628760c7.chunk.css",
     "main.js": "/sellgoproducrowtest/static/js/main.c7c113cc.chunk.js",
     "main.js.map": "/sellgoproducrowtest/static/js/main.c7c113cc.chunk.js.map",
     "runtime-main.js": "/sellgoproducrowtest/static/js/runtime-main.3ef47259.js",
@@ -9,10 +9,10 @@
     "static/js/2.2732ea16.chunk.js": "/sellgoproducrowtest/static/js/2.2732ea16.chunk.js",
     "static/js/2.2732ea16.chunk.js.map": "/sellgoproducrowtest/static/js/2.2732ea16.chunk.js.map",
     "index.html": "/sellgoproducrowtest/index.html",
-    "precache-manifest.c5734c5f6cbc60114cedc492ac1c3869.js": "/sellgoproducrowtest/precache-manifest.c5734c5f6cbc60114cedc492ac1c3869.js",
+    "precache-manifest.7b60e5900be3c821fc574a57d7e01988.js": "/sellgoproducrowtest/precache-manifest.7b60e5900be3c821fc574a57d7e01988.js",
     "service-worker.js": "/sellgoproducrowtest/service-worker.js",
     "static/css/2.ed10d053.chunk.css.map": "/sellgoproducrowtest/static/css/2.ed10d053.chunk.css.map",
-    "static/css/main.bf8397f8.chunk.css.map": "/sellgoproducrowtest/static/css/main.bf8397f8.chunk.css.map",
+    "static/css/main.628760c7.chunk.css.map": "/sellgoproducrowtest/static/css/main.628760c7.chunk.css.map",
     "static/js/2.2732ea16.chunk.js.LICENSE": "/sellgoproducrowtest/static/js/2.2732ea16.chunk.js.LICENSE",
     "static/media/semantic.min.css": "/sellgoproducrowtest/static/media/outline-icons.ef60a4f6.woff",
     "static/media/flag-us.jpg": "/sellgoproducrowtest/static/media/flag-us.c5d3a2ad.jpg",
@@ -30,7 +30,7 @@
     "static/js/runtime-main.3ef47259.js",
     "static/css/2.ed10d053.chunk.css",
     "static/js/2.2732ea16.chunk.js",
-    "static/css/main.bf8397f8.chunk.css",
+    "static/css/main.628760c7.chunk.css",
     "static/js/main.c7c113cc.chunk.js"
   ]
 }

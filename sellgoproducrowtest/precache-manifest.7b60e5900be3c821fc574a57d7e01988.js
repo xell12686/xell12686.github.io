@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a191461d6ae299f2fc845b3b0abcb5f5",
+    "revision": "46f0891dc2763af112d6d7118b5f9b00",
     "url": "/sellgoproducrowtest/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sellgoproducrowtest/static/css/2.ed10d053.chunk.css"
   },
   {
-    "revision": "2712192c175d5867b191",
-    "url": "/sellgoproducrowtest/static/css/main.bf8397f8.chunk.css"
+    "revision": "3065c56e434c60386ece",
+    "url": "/sellgoproducrowtest/static/css/main.628760c7.chunk.css"
   },
   {
     "revision": "7eaf2f9c4e548500a39d",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sellgoproducrowtest/static/js/2.2732ea16.chunk.js.LICENSE"
   },
   {
-    "revision": "2712192c175d5867b191",
+    "revision": "3065c56e434c60386ece",
     "url": "/sellgoproducrowtest/static/js/main.c7c113cc.chunk.js"
   },
   {
